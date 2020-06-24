@@ -2044,4 +2044,4 @@ window.jscolor = (function () { // BEGIN window.jscolor
 
 window.JSColor = window.jscolor; // 'JSColor' is an alias to 'jscolor'
 
-module.export = window.JSColor;
+module.exports = window.JSColor;
