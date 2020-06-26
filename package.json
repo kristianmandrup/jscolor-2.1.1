@@ -1,6 +1,6 @@
 {
   "name": "jscolor-211",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Web Color Picker that aims to be super easy both for developers and end users. http://jscolor.com",
   "main": "dist/JSColor.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EastDesire/jscolor/issues"
   },
-  "homepage": "https://github.com/EastDesire/jscolor#readme"
+  "homepage": "https://github.com/EastDesire/jscolor#readme",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  }
 }

@@ -720,9 +720,9 @@ export class JsColor {
     return jsc.picker && jsc.picker.owner === this;
   }
 
-  protected handleValueBlur() {
+  protected handleValueBlur = () => {
     this.importColor();
-  }
+  };
 
   hide() {
     if (this.isPickerOwner()) {
@@ -1521,7 +1521,7 @@ export class JsColor {
     return null;
   }
 
-  onDocumentMouseDown(e) {
+  onDocumentMouseDown = (e) => {
     const { onControlPointerStart, picker } = this;
     if (!e) e = window.event;
     var target = e.target || e.srcElement;
@@ -1538,9 +1538,9 @@ export class JsColor {
         picker.owner.hide();
       }
     }
-  }
+  };
 
-  onDocumentTouchStart(e) {
+  onDocumentTouchStart = (e) => {
     const jsc = this;
     if (!e) e = window.event;
     var target = e.target || e.srcElement;
@@ -1556,9 +1556,9 @@ export class JsColor {
         jsc.picker.owner.hide();
       }
     }
-  }
+  };
 
-  protected onDocumentKeyUp(e) {
+  protected onDocumentKeyUp = (e) => {
     const jsc = this;
     if (!e) e = window.event;
 
@@ -1572,20 +1572,20 @@ export class JsColor {
         jsc.picker.owner.hide();
       }
     }
-  }
+  };
 
-  protected onWindowResize(_e) {
+  protected onWindowResize = (_e) => {
     const jsc = this;
     jsc.redrawPosition();
-  }
+  };
 
-  protected onParentScroll(_e) {
+  protected onParentScroll = (_e) => {
     const jsc = this;
     // hide the picker when one of the parent elements is scrolled
     if (jsc.picker && jsc.picker.owner) {
       jsc.picker.owner.hide();
     }
-  }
+  };
 
   protected _pointerMoveEvent = {
     mouse: "mousemove",
@@ -1600,7 +1600,7 @@ export class JsColor {
   protected _pointerOrigin: any = null;
   protected _capturedTarget: any = null;
 
-  protected onControlPointerStart(e, target, controlName, pointerType) {
+  protected onControlPointerStart = (e, target, controlName, pointerType) => {
     var thisObj = target._jscInstance;
     const jsc = this;
     jsc.preventDefault(e);
@@ -1656,15 +1656,15 @@ export class JsColor {
     }
 
     jsc.dispatchFineChange(thisObj);
-  }
+  };
 
-  protected onDocumentPointerMove(
+  protected onDocumentPointerMove = (
     _e,
     target,
     controlName,
     _pointerType,
     offset
-  ) {
+  ) => {
     const jsc = this;
     return function (e) {
       var thisObj = target._jscInstance;
@@ -1682,9 +1682,9 @@ export class JsColor {
           break;
       }
     };
-  }
+  };
 
-  protected onDocumentPointerEnd(_e, target, _controlName, _pointerType) {
+  protected onDocumentPointerEnd = (_e, target, _controlName, _pointerType) => {
     const jsc = this;
     return function (_e) {
       var thisObj = target._jscInstance;
@@ -1695,7 +1695,7 @@ export class JsColor {
       // that would intrude with current mouse events
       jsc.dispatchChange(thisObj);
     };
-  }
+  };
 
   protected dispatchChange(thisObj) {
     const jsc = this;
@@ -1706,7 +1706,7 @@ export class JsColor {
     }
   }
 
-  protected dispatchFineChange(thisObj) {
+  protected dispatchFineChange = (thisObj) => {
     if (thisObj.onFineChange) {
       var callback;
       if (typeof thisObj.onFineChange === "string") {
@@ -1716,9 +1716,9 @@ export class JsColor {
       }
       callback.call(thisObj);
     }
-  }
+  };
 
-  protected setPad(thisObj, e, ofsX, ofsY) {
+  protected setPad = (thisObj, e, ofsX, ofsY) => {
     const jsc = this;
     var pointerAbs = jsc.getAbsPointerPos(e);
     var x =
@@ -1745,9 +1745,9 @@ export class JsColor {
         thisObj.fromHSV(xVal, null, yVal, jsc.leaveSld);
         break;
     }
-  }
+  };
 
-  protected setSld(thisObj, e, ofsY) {
+  protected setSld = (thisObj, e, ofsY) => {
     const jsc = this;
     var pointerAbs = jsc.getAbsPointerPos(e);
     var y =
@@ -1767,13 +1767,13 @@ export class JsColor {
         thisObj.fromHSV(null, null, yVal, jsc.leavePad);
         break;
     }
-  }
+  };
 
   protected _vmlNS = "jsc_vml_";
   protected _vmlCSS = "jsc_vml_css_";
   protected _vmlReady = false;
 
-  protected initVML() {
+  protected initVML = () => {
     const jsc = this;
     if (!jsc._vmlReady) {
       // init VML namespace
@@ -1817,7 +1817,7 @@ export class JsColor {
       }
       jsc._vmlReady = true;
     }
-  }
+  };
 
   protected createPalette() {
     var paletteObj: any = {
@@ -2016,11 +2016,11 @@ export class JsColor {
   //
 
   // Initializes jscolor on current DOM tree
-  init() {
+  init = () => {
     if (this.lookupClass) {
       this.installByClassName(this.lookupClass);
     }
-  }
+  };
 
   static presets = {
     default: {}, // baseline for customization
@@ -2068,7 +2068,7 @@ export class JsColor {
     var inputElms = document.getElementsByTagName("input");
     var buttonElms = document.getElementsByTagName("button");
 
-    this.tryInstallOnElements(inputElms, className);
+    jsc.tryInstallOnElements(inputElms, className);
     jsc.tryInstallOnElements(buttonElms, className);
   }
 }
