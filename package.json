@@ -1,8 +1,8 @@
 {
   "name": "jscolor-211",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Web Color Picker that aims to be super easy both for developers and end users. http://jscolor.com",
-  "main": "jscolor.js",
+  "main": "dist/JSColor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

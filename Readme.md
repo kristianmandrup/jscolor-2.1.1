@@ -1,11 +1,20 @@
-# jscolor
+# JsColor picker
 
-jscolor is a web color picker component that aims to be super easy both for developers to install and for the end users to use.
+JsColor is a web color picker component that aims to be super easy both for developers to install and for the end users to use.
+
+See [JsColor site](http://jscolor.com)
+
+## TypeScript
+
+This version of JsColor picker has been rewritten in TypeScript.
+The typescript files are compiled to the `dist` folder.
+
+The original jscolor is available in javascript as `jscolor-picker.js` where the `jscolor` global is exported via `module.exports = jscolor` for use with NodeJS.
 
 ## Installation in two lines
 
 ```html
-<script src="jscolor.js"></script>
+<script src="JsColor.js"></script>
 
 Color: <input data-jscolor="" value="ab2567" />
 ```
@@ -13,9 +22,7 @@ Color: <input data-jscolor="" value="ab2567" />
 ## Node Usage (simulated browser environment)
 
 ```js
-import jscolor from "jscolor";
-const JSColor = jscolor;
-
+import JsColor from "jscolor-211";
 const opts = {
   // ...
 };
