@@ -11,6 +11,8 @@ The typescript files are compiled to the `dist` folder.
 
 The original jscolor is available in javascript as `jscolor-picker.js` where the `jscolor` global is exported via `module.exports = jscolor` for use with NodeJS.
 
+Note: The rewritten TypeScript library is still untested. Some of the methods need to be reshaped to the form `xxxx = () => {}` in order that `this` is maintained correctly when used as a callback, such as an event handler.
+
 ## Installation in two lines
 
 ```html
@@ -33,7 +35,7 @@ picker.show();
 
 ## Usage examples
 
-Explore various examples of usage at http://jscolor.com/examples/
+Explore various examples of usage at [Examples](http://jscolor.com/examples/)
 
 ## Features
 
@@ -53,5 +55,5 @@ For more info on jscolor project, see [jscolor website](http://jscolor.com)
 
 ## Pull requests
 
-Please do not submit any pull requests (see CONTRIBUTING.md)
+Please do not submit any pull requests see [CONTRIBUTING](CONTRIBUTING.md)
 Sorry for any inconvenience caused.
